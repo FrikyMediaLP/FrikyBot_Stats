@@ -1,0 +1,21 @@
+#content {
+    background-color: #f3f3f3 !important;
+}
+
+.darkmode #grid #content {
+    background-color: #4f4f4f !important;
+    color: white;
+}
+
+#PAGE_HEADER {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.darkmode #grid #content #PAGE_HEADER {
+    margin-top: 10px;
+    background-color: #262626;
+}

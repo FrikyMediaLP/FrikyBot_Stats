@@ -1,0 +1,211 @@
+/* 
+    ////////////////////////////////////
+                GRID: DEFAULT
+    ////////////////////////////////////
+
+    * This CSS File designs the Grid wrapping around the content!
+    * Grid Foundation(css too) required!
+    * _____________________________
+    * | NaviHeader | ContenHeader |
+    * |____________|______________|
+    * |    Navi    |   Content    |
+    * |____________|______________|
+*/
+
+/* 
+    ////////////////////////////////////
+            MAIN GRID NAVIHEADER
+    ////////////////////////////////////
+*/
+
+#grid #naviHeader {
+    background-color: #f7be2d;
+    padding: 0;
+    height: 100%;
+}
+
+body.darkmode #grid #naviHeader {
+    background-color: #bf8300;
+}
+    #grid #naviHeader a {
+        position: relative;
+    }
+
+    #grid #naviHeader .back {
+        font-size: 30px;
+        position: absolute;
+        top: 0;
+        left: 7px;
+        width: 125px;
+    }
+
+    #grid #naviHeader .to {
+        font-size: 15px;
+        position: absolute;
+        left: 32px;
+        bottom: -13px;
+    }
+
+
+/* 
+    ////////////////////////////////////
+             MAIN GRID NAVI
+    ////////////////////////////////////
+*/
+
+#grid #navi {
+    background-color: #f5f5f5;
+}
+
+body.darkmode #grid #navi {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+    #grid #navi > button {
+        height: 50px;
+        width: 200px;
+        position: absolute;
+        bottom: 30px;
+        left: 15px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        border: none;
+    }
+
+        #grid #navi > button:hover {
+            border: 1px solid orange;
+        }
+
+    #grid #navi #mainNavi {
+        padding: 5px;
+        font-family: 'Roboto', sans-serif;
+        display: block;
+    }
+
+        #grid #navi #mainNavi input {
+            border: none;
+            height: 25px;
+            width: calc(100% - 5px);
+        }
+
+body.darkmode #grid #navi #mainNavi input {
+    background-color: #262626;
+    color: white;
+}
+
+        #grid #navi #mainNavi .NAVIGATION_CHAPTER {
+            margin-top: 10px;
+        }
+
+            #grid #navi #mainNavi .NAVIGATION_CHAPTER center {
+                margin: 10px 0px;
+                border-bottom: 1px solid gray;
+                font-weight: 300;
+                font-size: 18px;
+            }
+
+        #grid #navi #mainNavi .NAVIGATION_BUTTON_WRAPPER {
+            margin: 0 auto;
+            max-width: 85%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-row-gap: 10px;
+        }
+
+            #grid #navi #mainNavi .NAVIGATION_BUTTON_WRAPPER > a {
+                font-weight: 300;
+                font-size: 17px;
+                padding: 4px;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 4px;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+body.darkmode #grid #navi #mainNavi .NAVIGATION_BUTTON_WRAPPER > a {
+    background-color: #262626;
+    color: white;
+    border-color: dimgray;
+}
+
+#grid #mainNavi .NAVIGATION_BUTTON_WRAPPER > a[href=""] {
+    pointer-events: none;
+    background-color: lightgray !important;
+    color: gray !important;
+}
+
+body.darkmode #grid #navi #mainNavi .NAVIGATION_BUTTON_WRAPPER > a[href=""] {
+    background-color: #262626 !important;
+    color: dimgray !important;
+}
+
+#grid #mainNavi .NAVIGATION_BUTTON_WRAPPER > a:not([href=""]):hover {
+    background-color: gold !important;
+}
+
+#grid #mainNavi .NAVIGATION_BUTTON_WRAPPER > a:not([href=""])[highlighted] {
+    background-color: gold !important;
+}
+
+    #grid #mainNavi .NAVIGATION_BUTTON_WRAPPER > a:not([href=""])[highlighted]:hover {
+        background-color: orange !important;
+        color: white !important;
+    }
+
+/* 
+    ////////////////////////////////////
+          MAIN GRID CONTENTHEADER
+    ////////////////////////////////////
+ */
+#grid #contentHeader {
+    background-color: #ffde8c;
+}
+
+body.darkmode #grid #contentHeader {
+    background-color: #e0ad3d;
+}
+
+    #grid #contentHeader .HOVERPROFILE {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+/* 
+    ////////////////////////////////////
+            MAIN GRID CONTENT
+    ////////////////////////////////////
+*/
+
+#grid #content {
+    background-color: #f5f5f5;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+    #grid #content::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    #grid #content::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    #grid #content::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+.darkmode #grid #content {
+    background-color: #1f1f1f;
+    color: white;
+}

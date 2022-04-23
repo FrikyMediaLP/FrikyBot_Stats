@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Stats - FrikyBot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GENERAL CSS -->
+    <link href="../../styles/standard.css" rel="stylesheet">
+    <link href="../../styles/Grid/Grid_Foundation.css" rel="stylesheet">
+
+    <!-- PAGE CSS-->
+    <link href="../Stats/Grid_Stats.css" rel="stylesheet">
+    <link href="../Stats/misc/Stats_Misc.css" rel="stylesheet">
+    <link href="/Stats/standard.css" rel="stylesheet">
+
+    <!-- GENERAL JS-->
+    <script src="../scripts/standard.js"></script>
+    <script src="../Stats/standard.js"></script>
+    <script src="../Stats/misc/Stats_Misc.js"></script>
+
+    <!-- MISC -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <script src="../misc/OUTPUT/OUTPUT.js"></script>
+    <link href="../misc/OUTPUT/OUTPUT.css" rel="stylesheet">
+
+    <script src="../misc/BOT_STATUS/BOT_STATUS.js"></script>
+    <link href="../misc/BOT_STATUS/BOT_STATUS.css" rel="stylesheet">
+
+    <script src="../misc/Login/Login.js"></script>
+    <link href="../misc/Login/Login.css" rel="stylesheet">
+
+    <script src="../misc/SwitchButton/SwitchButton.js"></script>
+    <link href="../misc/SwitchButton/SwitchButton.css" rel="stylesheet">
+
+    <script>
+        async function init() {
+            OUTPUT_create();
+
+            fetch("/api/stats/streams", getAuthHeader())
+                .then(STANDARD_FETCH_RESPONSE_CHECKER)
+                .then(json => {
+                    console.log(json);
+
+                    let s = "";
+                    for (let stream of json.data) {
+                        s += createSimpleStream(stream);
+                    }
+                    document.getElementById('STATS').innerHTML = s;
+                })
+                .catch(err => {
+                    console.log(err);
+                    OUTPUT_showError(err.message);
+                });
+        }
+    </script>
+</head>
+<body onload="Standard_Page_Init({ NAVIGATION_ENABLE_DEFAULT: false }); Stats_Page_Init(); init();">
+    <!-- MAIN GRID -->
+    <div id="grid">
+        <!-- NAVI HEADER -->
+        <div class="cellM" id="naviHeader">
+            <a href="./../../../../../">
+                <span class="back"><b>BACK</b> TO</span>
+                <span class="to">FRIKY<b>BOT</b></span>
+            </a>
+        </div>
+
+        <!-- CONTENT HEADER -->
+        <div class="cellM" id="contentHeader">
+
+        </div>
+
+        <!-- NAVI -->
+        <div class="cellM" id="navi">
+            <div id="mainNavi">
+                <input type="text" placeholder="Username / Emote / Stream Date / ..." />
+                <div class="NAVIGATION_CHAPTER">
+                    <div class="NAVIGATION_BUTTON_WRAPPER">
+                        <a href="/Stats"><div>OVERVIEW</div></a>
+                        <a href="/Stats/streams"><div>ALL STREAMS</div></a>
+                        <a href="/Stats/emotes"><div>ALL EMOTES</div></a>
+                        <a href="/Stats/users"><div>ALL USERS</div></a>
+                    </div>
+                </div>
+                <div class="NAVIGATION_CHAPTER">
+                    <center>TOP CHATTERS</center>
+                    <div class="NAVIGATION_BUTTON_WRAPPER">
+                        <a href="" id="NAVIGATION_BUTTON_TOP1"><div>TOP 1 USER</div></a>
+                        <a href="" id="NAVIGATION_BUTTON_TOP2"><div>TOP 2 USER</div></a>
+                        <a href="" id="NAVIGATION_BUTTON_TOP3"><div>TOP 3 USER</div></a>
+                        <a href="" id="NAVIGATION_BUTTON_TOP4"><div>TOP 4 USER</div></a>
+                        <a href="" id="NAVIGATION_BUTTON_TOP5"><div>TOP 5 USER</div></a>
+                    </div>
+                </div>
+                <div class="NAVIGATION_CHAPTER">
+                    <center>OTHER</center>
+                    <div class="NAVIGATION_BUTTON_WRAPPER">
+                        <a href=""><div>LEADERBOARD</div></a>
+                        <a href=""><div>TOP COMMANDS</div></a>
+                        <a href="" id="NAVIGATION_LAST_STREAM"><div>LAST STREAM</div></a>
+                        <a href="" highlighted><div>INFO & USAGE</div></a>
+                    </div>
+                </div>
+            </div>
+            <button id="LightModeButton" onclick="toggleLightMode()">DarkMode</button>
+            <div id="license"> - <a href="https://fontawesome.com/license" target="_blank">Icon license</a> - </div>
+        </div>
+
+        <!-- ACTUAL CONTENT -->
+        <div class="cellM" id="content" style="background-color: #f5f5f5;">
+            <output></output>
+
+            <center id="PAGE_HEADER">ALL STREAM STATS</center>
+
+            <div id="STATS">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

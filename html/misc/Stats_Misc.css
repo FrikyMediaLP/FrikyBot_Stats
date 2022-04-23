@@ -1,0 +1,248 @@
+/* STAT TABLES */
+.STAT_TABLE > p {
+    padding-left: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    margin-bottom: 3px;
+}
+
+.darkmode .STAT_TABLE > p {
+    border-bottom-color: lightgray;
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-bottom: 1px solid lightgray;
+}
+
+.darkmode .STAT_TABLE .STAT_TABLE_ELEMENT {
+    border-bottom-color: gray;
+}
+
+.STAT_TABLE_INDEXED .STAT_TABLE_ELEMENT {
+    grid-template-columns: 20px auto auto;
+}
+.STAT_TABLE_INDEXED.STAT_TABLE_INDEXED_WIDE .STAT_TABLE_ELEMENT {
+    grid-template-columns: auto auto auto;
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT:last-child {
+    border-bottom: none;
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT > p {
+    margin: 5px;
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT .STAT_NAME > img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT .STAT_NAME.EMPTY {
+    width: 100%;
+    text-align: right;
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT .STAT_NAME > span {
+    display: inline-block;
+    transform: translate(0, -20%);
+}
+
+.STAT_TABLE .STAT_TABLE_ELEMENT .STAT_VALUE {
+    text-align: right;
+}
+
+/* -----------------------------------------------------------------
+                            SIMPLE USER 
+    ----------------------------------------------------------------
+*/
+.SIMPLE_USER {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.darkmode #grid #content .SIMPLE_USER {
+    background-color: #262626;
+}
+
+
+/* USER HEADER */
+.SIMPLE_USER .USER_HEADER {
+    position: relative;
+    margin: 10px 0;
+}
+
+    .SIMPLE_USER .USER_HEADER .USER_NAME {
+        color: #262626;
+        display: inline-block;
+        transform: translate(0, -10px);
+    }
+
+.darkmode .SIMPLE_USER .USER_HEADER .USER_NAME {
+    color: white;
+}
+
+.SIMPLE_USER .USER_HEADER .USER_ID {
+    color: #b0b0b0;
+    font-weight: 300;
+    font-size: 10px;
+    display: inline-block;
+    margin-left: 10px;
+    transform: translate(0, -10px);
+}
+
+.SIMPLE_USER .USER_HEADER .USER_BADGES {
+    position: absolute;
+    right: 0;
+    top: -20px;
+}
+
+    .SIMPLE_USER .USER_HEADER .USER_BADGES > img {
+        height: 18px;
+        margin-left: 5px;
+    }
+
+    .SIMPLE_USER .USER_HEADER .USER_BADGES > a {
+        margin-left: 5px;
+    }
+
+/* LAYOUT */
+.SIMPLE_USER .USER_STATS_WRAPPER {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+/* -----------------------------------------------------------------
+                            SIMPLE EMOTE 
+    ----------------------------------------------------------------
+*/
+.SIMPLE_EMOTE {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.darkmode #grid #content .SIMPLE_EMOTE {
+    background-color: #262626;
+}
+
+/* HEADER */
+.SIMPLE_EMOTE .EMOTE_HEADER {
+    position: relative;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+    .SIMPLE_EMOTE .EMOTE_HEADER .EMOTE_IMG {
+        height: 46px;
+        margin-right: 10px;
+    }
+
+    .SIMPLE_EMOTE .EMOTE_HEADER .EMOTE_NAME {
+        color: #262626;
+        display: inline-block;
+        transform: translate(0, -10px);
+    }
+
+.darkmode .SIMPLE_EMOTE .EMOTE_HEADER .EMOTE_NAME {
+    color: white;
+}
+
+.SIMPLE_EMOTE .EMOTE_HEADER .EMOTE_ID {
+    color: #b0b0b0;
+    font-weight: 300;
+    font-size: 10px;
+    display: inline-block;
+    margin-left: 10px;
+    transform: translate(0, -10px);
+}
+
+.SIMPLE_EMOTE .EMOTE_HEADER .EMOTE_TYPE {
+    height: 46px;
+    position: absolute;
+    right: 0px;
+}
+
+/* LAYOUT */
+.SIMPLE_EMOTE .EMOTE_STATS_WRAPPER {
+    width: calc(100% - 10px);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+/* -----------------------------------------------------------------
+                            SIMPLE STREAM 
+    ----------------------------------------------------------------
+*/
+.SIMPLE_STREAM {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.darkmode #grid #content .SIMPLE_STREAM {
+    background-color: #262626;
+}
+
+/* HEADER */
+.SIMPLE_STREAM .STREAM_HEADER {
+    position: relative;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+    .SIMPLE_STREAM .STREAM_HEADER .STREAM_NAME {
+        color: #262626;
+        display: inline-block;
+    }
+
+.darkmode .SIMPLE_STREAM .STREAM_HEADER .STREAM_NAME {
+    color: white;
+}
+
+.SIMPLE_STREAM .STREAM_HEADER .STREAM_TITLE {
+    color: #262626;
+    display: inline-block;
+}
+
+.darkmode .SIMPLE_STREAM .STREAM_HEADER .STREAM_TITLE {
+    color: white;
+}
+
+.SIMPLE_STREAM .STREAM_HEADER .STREAM_ID {
+    color: #b0b0b0;
+    font-weight: 300;
+    font-size: 10px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* LAYOUT */
+.SIMPLE_STREAM .STREAM_STATS_WRAPPER {
+    width: calc(100% - 10px);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+/* -----------------------------------------------------------------
+                            FULL STREAM 
+    ----------------------------------------------------------------
+*/
+
+.FULL_STREAM .CHAT .STAT_TABLE_ELEMENT {
+    grid-template-columns: 64px auto auto !important;
+}
+
+.FULL_STREAM img {
+    height: 18px;
+    transform: translate(0, 2px);
+}
